@@ -1,109 +1,121 @@
-User Management System
+# User Management System
 
-A simple User Management System built as part of the RADIX SOLUTIONS Day 1 MERN Stack Internship Task.
+A full-stack User Management System developed using **Node.js, Express.js, MongoDB, and Next.js**.
 
-Features
+The project includes user registration, login authentication, password hashing, JWT-based authentication, protected APIs, role-based authorization, and a protected frontend.
 
-- Create a new user
+---
+
+## Features
+
+### Authentication
+
+- User registration
+- User login
+- Password hashing using bcrypt
+- JWT token generation
+- JWT token verification
+- Current user/profile API
+- Logout functionality
+- Protected authentication routes
+
+### Authorization
+
+- User and Admin roles
+- Default role is `user`
+- Admin-only operations
+- Reusable role-based authorization middleware
+- Protected CRUD operations
+
+### User Management
+
 - View all users
-- View user details
+- View a single user
+- Create users
+- Update users
 - Delete users
-- Email validation
-- Unique email validation
-- MongoDB database integration
-- REST API
-- Error handling
+- Duplicate email validation
+- Passwords are never returned in API responses
 
-Technologies Used
+### Frontend
 
-Frontend
+- Next.js App Router
+- Login page
+- Registration page
+- Profile page
+- Users page
+- User details page
+- Admin create-user page
+- Authentication state
+- Protected frontend pages
+- Logout functionality
+- API integration with backend
+
+---
+
+## Technology Stack
+
+### Frontend
 
 - Next.js
-- React.js
+- React
 - TypeScript
 - Tailwind CSS
 
-Backend
+### Backend
 
 - Node.js
 - Express.js
-- REST API
-
-Database
-
 - MongoDB
 - Mongoose
+- JWT
+- bcryptjs
+- CORS
+- dotenv
 
-Development Tools
+---
 
-- Git
-- GitHub
-- Thunder Client
+## Project Structure
 
-Project Structure
-
+```text
 RADIX-DAY1/
+│
 ├── backend/
 │   ├── config/
+│   │   └── db.js
+│   │
 │   ├── controllers/
+│   │   ├── authController.js
+│   │   └── userController.js
+│   │
 │   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   └── roleMiddleware.js
+│   │
 │   ├── models/
+│   │   └── user.js
+│   │
 │   ├── routes/
+│   │   ├── authRoutes.js
+│   │   └── userRoutes.js
+│   │
 │   ├── .env
-│   └── server.js
+│   ├── server.js
+│   └── package.json
 │
 ├── frontend/
 │   ├── app/
-│   ├── components/
-│   ├── services/
-│   └── types/
+│   │   ├── login/
+│   │   ├── register/
+│   │   ├── profile/
+│   │   ├── users/
+│   │   ├── components/
+│   │   ├── page.tsx
+│   │   └── layout.tsx
+│   │
+│   ├── public/
+│   ├── .env.local
+│   └── package.json
 │
 ├── .gitignore
 └── README.md
-
-API Endpoints
-
-Method| Endpoint| Description
-GET| "/api/users"| Get all users
-GET| "/api/users/:id"| Get user by ID
-POST| "/api/users"| Create a user
-DELETE| "/api/users/:id"| Delete a user
-
-How to Run
-
-Backend
-
-cd backend
-npm install
-node server.js
-
-Backend runs on:
-
-http://localhost:5000
-
-Frontend
-
-Open another terminal:
-
-cd frontend
-npm install
-npm run dev
-
-Frontend runs on:
-
-http://localhost:3000
-
-Environment Variables
-
-Create a ".env" file inside the "backend" folder:
-
-MONGO_URI=your_mongodb_connection_string
-PORT=5000
-
-Do not commit the ".env" file to GitHub.
-
-Author
-
-Mahreen Aleena
-
-RADIX SOLUTIONS — Day 1 Internship Task
